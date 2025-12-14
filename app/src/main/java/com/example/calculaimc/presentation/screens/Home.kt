@@ -153,6 +153,19 @@ fun HomeContent(
                 )
             }
 
+
+
+            /* GEMINI PRO - START
+            Prompt:
+            Here's the code for the measurement screen. Currently, it only has the Weight and Height inputs.
+            Do the manual work for me: add the Age field (numeric) right below and, subsequently, a Gender selector (Male/Female).
+            You can use a simple Row RadioButton to handle the gender. Keep the same OutlinedTextField and spacing pattern I used in the inputs above. Just generate the updated Composable.
+            */
+
+            /*Isac Silva Vieira - INÍCIO
+            Razão: Por questões de aderência, escrevo os prompts em inglês, mas como o projeto está em "português"
+            fiz a alteração dos comentários e nome das variáveis
+            */
             // --- GRUPO 2: IDADE ---
             OutlinedTextField(
                 value = state.idade,
@@ -193,6 +206,8 @@ fun HomeContent(
                 )
             }
 
+            /* GEMINI PRO - END */
+            /* Isac Silva Vieira - END */
             // --- BOTÃO CALCULAR ---
             Button(
                 onClick = {
@@ -212,6 +227,21 @@ fun HomeContent(
                     color = White
                 )
             }
+
+
+            /* GEMINI PRO - START
+                Prompt:
+                    Now, create the UI for displaying the results.
+                    Create a Card that only renders if the state.resultadoImc is not empty. You can use a light blue background (0xFFE3F2FD) to highlight it.
+                    Inside, list the fields: BMI, Classification, Ideal Weight, BMR, and Daily Calories. Use some spacing and dividers to organize them.
+                    Note: To avoid a lot of repeated Rows cluttering the code, extract the logic for displaying 'Label + Value' to an auxiliary component called ResultRow (using SpaceBetween) and use it inside the Card.
+               */
+
+            /*Isac Silva Vieira - INÍCIO
+            Razão: Por questões de aderência, escrevo os prompts em inglês, mas como o projeto está em "português"
+            fiz a alteração dos comentários e nome das variáveis
+            */
+
 
             // --- RESULTADOS (CARD) ---
             if (state.resultadoImc.isNotEmpty()) {
@@ -267,6 +297,10 @@ fun ResultRow(label: String, value: String) {
         Text(text = value, fontWeight = FontWeight.Bold)
     }
 }
+
+                /* GEMINI PRO - END */
+                /* Isac Silva Vieira - END */
+
 // --- PREVIEW ---
 @Preview
 @Composable

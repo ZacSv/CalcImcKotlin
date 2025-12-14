@@ -14,6 +14,23 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.calculaimc.presentation.viewmodel.HomeViewModel
 
+
+/* GEMINI PRO - START
+ Prompt:
+ Act as a Mobile UI/UX Specialist using Jetpack Compose. Create a Composable called `ResultDetailScreen` that serves to detail a specific historical record.
+Functional Requirements:
+    Receive as parameters a `record` object: `HealthRecord?` and a `onBackClick` lambda: `() -> Unit`.
+    The layout should be a Scaffold with a `TopAppBar` containing the back button and the title 'Record Details'.
+Visual Hierarchy:
+    Top (Highlight): A large, centered Card showing the BMI, Classification (text), and BMR. Use large, bold fonts for these numbers.
+    Middle (Grid or Row): Smaller Cards or a Row showing the input data that generated that result: Weight, Height, and Age.
+    Footer: The date the record was created.
+Technical Requirements:
+    Use `Column` with `Arrangement.spacedBy` for consistent spacing.
+    Use Material3 components (ElevatedCard, Text with MaterialTheme.typography).
+    Handle the case where a record might be null (displaying a loading or error message), although ideally it shouldn't be.
+ */
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ResultDetailScreen(
@@ -76,3 +93,5 @@ fun DetailRow(label: String, value: String, isBold: Boolean = false) {
         Text(value, fontSize = 16.sp, fontWeight = if (isBold) FontWeight.Bold else FontWeight.Normal)
     }
 }
+
+/* GEMINI PRO - END */

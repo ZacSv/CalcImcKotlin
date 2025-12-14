@@ -21,7 +21,7 @@ import com.example.calculaimc.presentation.screens.HistoryScreen
 import com.example.calculaimc.presentation.screens.Home
 import com.example.calculaimc.presentation.screens.ResultDetailScreen
 import com.example.calculaimc.presentation.viewmodel.HomeViewModelFactory
-import com.example.calculaimc.ui.theme.Blue // Certifique-se que estas cores existem no seu Theme
+import com.example.calculaimc.ui.theme.Blue
 import com.example.calculaimc.ui.theme.CalculaIMCTheme
 import com.example.calculaimc.ui.theme.White
 
@@ -45,7 +45,7 @@ class MainActivity : ComponentActivity() {
 
                     // ROTA 1: HOME (Calculadora)
                     composable("home") {
-                        // Usamos Scaffold aqui apenas para ter o botão flutuante (FAB)
+                        // Scaffold somente para usar o FAB
                         Scaffold(
                             floatingActionButton = {
                                 FloatingActionButton(

@@ -1,6 +1,5 @@
 package com.example.calculaimc.presentation.screens
 
-// --- IMPORTS ESSENCIAIS CORRIGIDOS ---
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -36,6 +35,28 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
+
+/* GEMINI PRO - START
+ Prompt:
+ Act as an Android Jetpack Compose Specialist. Create a Composable called HistoryScreen for a health app.
+Data Context: There is a data class HealthRecord(id: Int, weight: Double, height: Double, bmi: Double, date: Long).
+Functional Requirements:
+Receive the following parameters:
+    state: A list of HealthRecord (can be empty).
+    onDeleteClick: A lambda (HealthRecord) -> Unit.
+    onDetailClick: A lambda (Int) -> Unit (passing the ID).
+    If the list is empty, display a friendly message and an icon in the center of the screen.
+    If there is data, display a LazyColumn.
+    Each item in the list should be a Card (Material3) containing:
+    The formatted date (e.g., dd/MM/yyyy) highlighted.
+    The BMI and Weight values.
+    A trash can button/icon to delete the item. Use conditional colors for the BMI value in the Card (e.g., green if it's between 18.5 and 24.9, red otherwise).
+Technical Requirements:
+    Use Material 3.
+    The layout should be elegant and with adequate padding.
+    The code should only be for the UI (Stateless), do not include ViewModels or Rooms, only Composables
+ */
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HistoryScreen(
@@ -43,7 +64,7 @@ fun HistoryScreen(
     onBack: () -> Unit,
     onItemClick: (Int) -> Unit
 ) {
-    // Agora vai funcionar porque adicionamos 'historyList' no ViewModel
+
     val historyList by viewModel.historyList.collectAsState(initial = emptyList())
 
     Scaffold(
@@ -52,7 +73,6 @@ fun HistoryScreen(
                 title = { Text("Histórico") },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
-                        // Agora 'Icons' foi importado corretamente
                         Icon(Icons.Default.ArrowBack, contentDescription = "Voltar")
                     }
                 }
@@ -104,3 +124,5 @@ fun HistoryItemCard(item: CalculationEntity, onClick: () -> Unit) {
         }
     }
 }
+
+/** GEMINI PRO - END */

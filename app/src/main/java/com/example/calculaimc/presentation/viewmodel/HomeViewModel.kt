@@ -23,8 +23,19 @@ class HomeViewModel(private val dao: CalculationDao) : ViewModel() {
     private val _selectedCalculation = MutableStateFlow<CalculationEntity?>(null)
     val selectedCalculation: StateFlow<CalculationEntity?> = _selectedCalculation.asStateFlow()
 
+    /* GEMINI PRO - START
+    Prompt:
+    Perform a sanity check on this ViewModel snippet. The build is failing on these lines.
+    Snippet:
+        private val _uiState = MutableStateFlow(HomeUiState())
+        val uiState: StateFlow<HomeUiState> = _uiState.asStateFlow().
+    Check for syntax errors, missing imports, or type inconsistencies within the variable. Correct the code while maintaining encapsulation.
+    */
     private val _uiState = MutableStateFlow(HomeUiState())
     val uiState: StateFlow<HomeUiState> = _uiState.asStateFlow()
+
+    /* GEMINI PRO - END */
+
     // Função para atualizar o peso
     fun onPesoChanged(novoPeso: String) {
         if (novoPeso.length <= 7 && novoPeso.all { it.isDigit() }) {
