@@ -28,7 +28,6 @@ O projeto foi construído utilizando as práticas modernas de desenvolvimento An
 * `data/`: Contém a definição da Entidade (`Entity`), o DAO (Data Access Object) e a configuração do Banco de Dados (`AppDatabase`).
 * `ui/`: Contém as telas (`Screens`) construídas com Composable Functions.
 * `viewmodel/`: Contém os ViewModels responsáveis por gerenciar o estado das telas e comunicar com o repositório.
-* `utils/`: Classes utilitárias para cálculos e formatação de datas.
 
 ## 🚀 Como Executar
 
